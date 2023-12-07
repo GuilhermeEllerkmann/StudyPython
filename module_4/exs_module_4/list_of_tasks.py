@@ -1,4 +1,5 @@
 import os
+import json
 
 list_of_tasks = []
 list_of_erased_tasks = []
@@ -17,7 +18,6 @@ def undo(lista1, lista2):
     last_item = lista1.pop()
     lista2.append(last_item)
     
-
 def redo(lista1, lista2):
     if not lista2:
         return print('Nothing to redo\n')
@@ -32,9 +32,17 @@ def add(task, list_of_tasks):
     
     list_of_tasks.append(task)
         
+def finish(list):
+    base_dir = os.path.dirname(__file__)
+    save_to = os.path.join(base_dir, 'tasks.json')
+    with open(save_to, 'w') as arquivo:
+        json.dump(list, arquivo, indent=2)
+    
+    print('An archive with your tasks was created,')
+
 while True:
 
-    print('Commands: list, undo, redo\n')
+    print('Commands: list, undo, redo, finish\n')
     user_choice = str(input('Type an task or an command:'))
 
     if user_choice.lower() == 'clear':
@@ -45,5 +53,7 @@ while True:
       undo(list_of_tasks, list_of_erased_tasks)
     elif user_choice.lower() == 'redo':
        redo(list_of_tasks, list_of_erased_tasks)
-    else:
+    elif user_choice.lower() not in ('clear', 'list', 'undo', 'redo', 'finish'):
         add(user_choice, list_of_tasks)
+    elif user_choice.lower() == 'finish':
+        finish(list_of_tasks)
