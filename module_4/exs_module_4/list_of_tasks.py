@@ -32,15 +32,15 @@ def add(task, list_of_tasks):
     
     list_of_tasks.append(task)
         
-def finish(list):
+def save(list):
     base_dir = os.path.dirname(__file__)
     save_to = os.path.join(base_dir, 'tasks.json')
     with open(save_to, 'w') as arquivo:
         json.dump(list, arquivo, indent=2)
-    
-    print('An archive with your tasks was created,')
 
 while True:
+
+    save(list_of_tasks)
 
     print('Commands: list, undo, redo, finish\n')
     user_choice = str(input('Type an task or an command:'))
@@ -56,4 +56,4 @@ while True:
     elif user_choice.lower() not in ('clear', 'list', 'undo', 'redo', 'finish'):
         add(user_choice, list_of_tasks)
     elif user_choice.lower() == 'finish':
-        finish(list_of_tasks)
+        break
