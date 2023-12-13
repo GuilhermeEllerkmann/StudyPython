@@ -1,9 +1,6 @@
 class WakeUp:
-    def __init__(self) -> None:
-        pass
-    
-    def woke_up(self, hour):
-        return f'woke up at {hour}'
+    def __init__(self, hour):
+        self.hour = hour
 
     def piss(self, amount):
         return f'i pissed {amount}'
@@ -15,8 +12,8 @@ class WakeUp:
         return f'i left the house at {time}'
     
 
-acordei = WakeUp()
-print(acordei.woke_up('11'))
+acordei = WakeUp('11')
+print(f'I woke up at {acordei.hour}')
 print(acordei.piss('a loot'))
 print(acordei.eat('bread and cereal'))
 print(acordei.left_house('at two P.M.'))

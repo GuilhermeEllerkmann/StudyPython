@@ -1,20 +1,20 @@
-# Escopo da classe e de métodos da classe
-class Animal:
-    # nome = 'Leão'
+# Atributos de classe
+class Pessoa:
+    ano_atual = 2022
 
-    def __init__(self, nome):
+    def __init__(self, nome, idade):
         self.nome = nome
+        self.idade = idade
 
-        variavel = 'valor'
-        print(variavel)
-
-    def comendo(self, alimento):
-        return f'{self.nome} está comando {alimento}'
-
-    def executar(self, *args, **kwargs):
-        return self.comendo(*args, **kwargs)
+    def get_ano_nascimento(self):
+        return Pessoa.ano_atual - self.idade
 
 
-leao = Animal(nome='Leão')
-print(leao.nome)
-print(leao.executar('maçã'))
+p1 = Pessoa('João', 35)
+p2 = Pessoa('Helena', 12)
+
+print(Pessoa.ano_atual)
+# Pessoa.ano_atual = 1
+
+print(p1.get_ano_nascimento())
+print(p2.get_ano_nascimento())
