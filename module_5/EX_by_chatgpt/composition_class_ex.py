@@ -15,6 +15,7 @@
 #     Exiba a lista de livros na biblioteca com detalhes, incluindo o nome do autor de cada livro.
 
 # Este exercício ajudará a entender como as classes podem estar associadas de forma agregada, onde uma classe contém uma coleção de instâncias de outra classe, mas ambas podem existir independentemente.
+#testing ssh
 
 
 class Book():
@@ -33,7 +34,7 @@ class Book():
     def set_autor(self, autor):
         self._autor = autor
 
-        
+
 
 
 class Author():
