@@ -16,6 +16,7 @@
 
 # Este exercício ajudará a entender como as classes podem estar associadas de forma agregada, onde uma classe contém uma coleção de instâncias de outra classe, mas ambas podem existir independentemente.
 #testing ssh
+#testing sasdasd
 
 
 class Book():
