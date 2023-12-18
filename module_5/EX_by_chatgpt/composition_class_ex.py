@@ -33,8 +33,7 @@ class Book():
     def set_autor(self, autor):
         self._autor = autor
 
-    def escrever(self):
-        return f'{self._autor} eh o escritor'
+        
 
 
 class Author():
