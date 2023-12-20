@@ -18,26 +18,6 @@
 #testing ssh
 #testing sasdasd
 
-
-class Book():
-
-    def __init__(self, title, isbn, data_published):
-        self.title = title
-        self.isbn = isbn
-        self.data_published = data_published
-        self._autor = None
-
-    @property
-    def autor(self):
-        return self._autor
-    
-    @autor.setter
-    def set_autor(self, autor):
-        self._autor = autor
-
-
-
-
 class Author():
 
     def __init__(self, name, born):
@@ -45,18 +25,68 @@ class Author():
         self.born = born
 
     def escrever(self):
-        return f'{self.name} eh o escritor'
+        return f'o autor eh {self.name} e ele nasceu em {self.born}'
 
+class Book():
+
+    def __init__(self, title, isbn, data_published):
+        self.title = title
+        self.isbn = isbn
+        self.data_published = data_published
+        self._author = None
+
+    def escrever_dados_livro(self):
+        return f'O Nome do livro eh {self.title}, tem nota de {self.isbn}, e foi publicado em {self.data_published}'
+
+    @property
+    def autor(self):
+        return self._author
+    
+    @autor.setter
+    def autor(self, autor):
+        self._author = autor
 
 class Library():
 
-    def __init__(self, books, author):
-        self.books = books
-        self.author = author
+    def __init__(self):
+        self.__books = None
+        self.__collection = []
+
+    @property
+    def livro(self):
+        return self.__books
+    
+    @property
+    def colection(self):
+        for item in self.__collection:
+            i = (item.title, item.autor.name)
+        
+        return i
+    
+    @livro.setter
+    def livro(self, livro):
+        self.__books = livro
+
+    def add_collection(self, livro):
+        self.__collection.append(livro)
 
 
-autor = Author('Gui', 'Lins')
-livro = Book('a rosa de saron', '123', '22/07')
-livro.set_autor = autor
+livraria = Library() # Init da livraria
 
-print(livro.autor.escrever())
+
+#livro 1 dados
+
+autor1 = Author('Gui', '22/07')
+livro1 = Book('ROSA DE SARON', '123', '11/02')
+livro1.autor = autor1
+livraria.livro = livro1
+livraria.add_collection(livro1)
+
+#livro 2 dados
+autor2 = Author('Giovana', '16/10')
+livro2 = Book('Linda de bonita', '234', '11/05')
+livro2.autor = autor2
+livraria.livro = livro2
+livraria.add_collection(livro2)
+
+print(livraria.colection)
