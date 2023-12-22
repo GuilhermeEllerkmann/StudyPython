@@ -12,4 +12,4 @@
 
 # Lembre-se de criar instâncias das classes e testar os métodos para garantir que tudo está funcionando conforme o esperado.
 
-# Dica: Utilize o método __init__ nas classes para inicializar os atributos.
+# Dica: Utilize o método __init__ nas classes para inicializar os atributos.r
