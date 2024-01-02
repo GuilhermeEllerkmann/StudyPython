@@ -1,0 +1,3 @@
+# Exercício 2: Processamento de Arquivos
+# Descrição: Desenvolva uma classe abstrata ProcessadorDeArquivo com um método abstrato processar. Esta classe será a base para processar diferentes tipos de arquivos. 
+# Crie classes derivadas como ProcessadorCSV, ProcessadorTXT e ProcessadorJSON, implementando o método processar para lidar com a leitura e o processamento específico de cada tipo de arquivo.
