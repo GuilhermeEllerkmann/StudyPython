@@ -3,7 +3,7 @@
 # Esta classe deve ter um método abstrato chamado area e um método abstrato chamado perimetro. 
 # Implemente classes derivadas como Circulo, Retangulo e Triangulo, fornecendo implementações para os métodos area e perimetro.
 from abc import ABC, abstractmethod
-PI = 3.141592
+PI = 3.14
 
 class FormaGeometrica(ABC):
     
@@ -48,25 +48,16 @@ class Circulo(FormaGeometrica):
     def perimetro(self):
         return 2 * PI * self._raio
     
-# class Triangulo(FormaGeometrica):
+class Triangulo(FormaGeometrica):
 
-#     def __init__(self, a, b, c):
-#         self._a = a
-#         self._b = b
-#         self._c = c
-
-#     def is_triangle(self):
-
-#         if self._a + self._b > self._c and self._a + self._c > self._b and self._b + self._self._a > self._c and self._b + self._c > self._a and self._c + self._a > self._b and self._c + self._b > self._a:
-#             return True
-#         else:
-#             return False
+    def __init__(self, raio):
+        self._raio = raio
         
-#     def area(self):
-        
+    def perimetro(self):
+        return 2 * PI * self._raio
     
-    
-
+    def area(self):
+        return PI * (self._raio * self._raio)
 
 ret = Retangulo(5, 10)
 ret.area_perimetro()
@@ -74,3 +65,6 @@ ret.area_perimetro()
 
 circ = Circulo(5)
 circ.area_perimetro()
+
+triang = Triangulo(12.5)
+triang.area_perimetro()
