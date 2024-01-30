@@ -1,0 +1,22 @@
+[
+  {
+    "agencia": 123,
+    "numero_conta": 222,
+    "saldo": 2343,
+    "limite_extra": 100,
+    "id_user": 9174
+  },
+  {
+    "agencia": 123,
+    "numero_conta": 222,
+    "saldo": 0,
+    "limite_extra": 100,
+    "id_user": 6670
+  },
+  {
+    "agencia": 456,
+    "numero_conta": 333,
+    "saldo": 0,
+    "id_user": 3634
+  }
+]

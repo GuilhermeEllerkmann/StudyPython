@@ -1,0 +1,23 @@
+[
+  {
+    "id": 9174,
+    "login": "GUI",
+    "senha": "22",
+    "nome": "GUILHERME",
+    "idade": "22"
+  },
+  {
+    "id": 6670,
+    "login": "BRK",
+    "senha": "123",
+    "nome": "BRK",
+    "idade": "55"
+  },
+  {
+    "id": 3634,
+    "login": "LUCAS",
+    "senha": "44",
+    "nome": "LUCAS BOMBARDA",
+    "idade": "55"
+  }
+]

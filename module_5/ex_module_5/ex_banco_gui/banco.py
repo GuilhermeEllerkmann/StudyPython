@@ -1,6 +1,4 @@
 
-
-
 class Bancos:
     def __init__(self, contas = None, clientes = None, agencias = None):
         self.contas = contas or []

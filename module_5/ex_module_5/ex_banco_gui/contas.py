@@ -18,6 +18,7 @@ class ContaCorrente(Conta):
     def __init__(self, agencia, numero_conta, saldo, limite_extra):
         super().__init__(agencia, numero_conta, saldo)
         self.limite_extra = limite_extra
+        self.id_user = None
 
     def sacar(self, valor):
         valor_pos_saque = self.saldo - valor
@@ -33,12 +34,13 @@ class ContaCorrente(Conta):
 
     def __repr__(self):
         class_name = type(self).__name__
-        attrs = f'({self.agencia!r}, {self.numero_conta!r}, {self.saldo!r}, {self.limite_extra!r})'
+        attrs = f'({self.agencia!r}, {self.numero_conta!r}, {self.saldo!r}, {self.limite_extra!r}, {self.id_user!r})'
         return f'{class_name}{attrs}'
 
 class ContaPoupanca(Conta):
-    def __init__(self, agencia, numero_conta, saldo):
+    def __init__(self, agencia, numero_conta, saldo,):
         super().__init__(agencia, numero_conta, saldo)
+        self.id_user = None
 
     def sacar(self, valor):
         if valor > self.saldo:
@@ -46,5 +48,5 @@ class ContaPoupanca(Conta):
 
     def __repr__(self):
         class_name = type(self).__name__
-        attrs = f'({self.agencia!r}, {self.numero_conta!r}, {self.saldo!r})'
+        attrs = f'({self.agencia!r}, {self.numero_conta!r}, {self.saldo!r}, {self.id_user!r})'
         return f'{class_name}{attrs}'
